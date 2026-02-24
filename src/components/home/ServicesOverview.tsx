@@ -117,16 +117,6 @@ export default function ServicesOverview() {
           ))}
         </div>
 
-        {/* 하단 CTA 링크 */}
-        <div className="mt-16 text-center">
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 group text-text-muted hover:text-brand-green transition-colors font-medium border-b border-transparent hover:border-brand-green pb-1"
-          >
-            모든 서비스 상세 내용 확인하기
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </Link>
-        </div>
       </div>
     </section>
   );
