@@ -3,8 +3,8 @@ import ServiceCard from "./ServiceCard";
 
 export default function ServiceList() {
   return (
-    <section className="section-padding bg-navy-950">
-      <div className="max-w-6xl mx-auto">
+    <section className="pb-32 bg-[#0a192f]">
+      <div className="max-w-7xl mx-auto px-6">
         {SERVICES.map((service, index) => (
           <ServiceCard
             key={service.id}

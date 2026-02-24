@@ -1,3 +1,6 @@
+"use client";
+
+import Image from "next/image";
 import { Service } from "@/constants/services";
 import ServiceIcon from "@/components/ui/ServiceIcon";
 
@@ -6,96 +9,85 @@ interface Props {
   reversed?: boolean;
 }
 
-// 서비스별 포인트 컬러 (그린/블루 교차)
-const accentColor: Record<string, { text: string; bg: string; checkBg: string; checkBorder: string }> = {
-  marketing: {
-    text: "text-brand-green",
-    bg: "bg-brand-green-light",
-    checkBg: "rgba(46, 139, 60, 0.1)",
-    checkBorder: "rgba(46, 139, 60, 0.3)",
-  },
-  design: {
-    text: "text-brand-blue",
-    bg: "bg-brand-blue-light",
-    checkBg: "rgba(26, 92, 179, 0.1)",
-    checkBorder: "rgba(26, 92, 179, 0.3)",
-  },
-  web: {
-    text: "text-brand-green",
-    bg: "bg-brand-green-light",
-    checkBg: "rgba(46, 139, 60, 0.1)",
-    checkBorder: "rgba(46, 139, 60, 0.3)",
-  },
-  brand: {
-    text: "text-brand-blue",
-    bg: "bg-brand-blue-light",
-    checkBg: "rgba(26, 92, 179, 0.1)",
-    checkBorder: "rgba(26, 92, 179, 0.3)",
-  },
+// 서비스별 로컬 이미지 매핑
+const serviceImages: Record<string, string> = {
+  marketing: "/images/service-web.jpg", // 이미 존재하는 이미지 활용
+  design: "/images/service-design.jpg",
+  web: "/images/service-web.jpg",
+  brand: "/images/service-brand.jpg",
 };
 
 export default function ServiceCard({ service, reversed = false }: Props) {
-  const colors = accentColor[service.id];
+  const imageUrl = serviceImages[service.id] || "/images/hero.jpg";
 
   return (
     <article
       id={service.id}
-      className={`flex flex-col ${
-        reversed ? "lg:flex-row-reverse" : "lg:flex-row"
-      } gap-12 items-start py-20 border-b border-border last:border-0`}
+      className={`relative flex flex-col ${reversed ? "lg:flex-row-reverse" : "lg:flex-row"
+        } items-stretch gap-0 mb-24 last:mb-0 rounded-[2rem] overflow-hidden bg-white group min-h-[500px] shadow-2xl`}
     >
-      {/* 아이콘 및 타이틀 블록 */}
-      <div className="flex-shrink-0 w-full lg:w-64">
+      {/* 1. 이미지 영역 (카드 전체 높이를 차지하도록) */}
+      <div className="relative w-full lg:w-3/5 h-[350px] lg:h-auto overflow-hidden">
+        <Image
+          src={imageUrl}
+          alt={service.title}
+          fill
+          className="object-cover transition-transform duration-1000 group-hover:scale-105"
+        />
+        {/* 이미지 위 그라데이션 오버레이 (텍스트 반대쪽) */}
         <div
-          className={`w-20 h-20 rounded-2xl ${colors.bg} flex items-center justify-center mb-6
-                      shadow-sm`}
-        >
-          <ServiceIcon name={service.iconName} className={`w-10 h-10 ${colors.text}`} />
-        </div>
-        <p className={`text-xs font-medium tracking-widest uppercase mb-2 ${colors.text}`}>
-          {service.subtitle}
-        </p>
-        <h2 className="font-heading text-2xl md:text-3xl font-bold text-text-1 mb-4">
-          {service.title}
-        </h2>
-        <div className="green-divider" style={{ backgroundColor: colors.text === "text-brand-blue" ? "#1A5CB3" : "#2E8B3C" }} />
+          className={`absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r ${reversed ? "from-transparent to-[#0a192f]/20" : "from-[#0a192f]/20 to-transparent"
+            }`}
+        />
       </div>
 
-      {/* 콘텐츠 블록 */}
-      <div className="flex-1">
-        <p className="text-text-2 leading-relaxed text-base mb-8">
+      {/* 2. 텍스트 콘텐츠 영역 */}
+      <div className="flex-1 p-10 lg:p-16 flex flex-col justify-center relative bg-white">
+        {/* 상단 액센트 라인 (픽셀로그 옐로우) */}
+        <div className="absolute top-0 inset-x-0 h-2 bg-[#FFD200]" />
+
+        <div className="flex items-center gap-4 mb-8">
+          <div className="w-14 h-14 rounded-2xl bg-[#0a192f] flex items-center justify-center text-[#FFD200] shadow-lg group-hover:rotate-6 transition-transform">
+            <ServiceIcon name={service.iconName} className="w-7 h-7" />
+          </div>
+          <div>
+            <p className="text-[#FFD200] text-[10px] font-black uppercase tracking-[0.3em] bg-[#0a192f] px-3 py-1 rounded-full w-fit">
+              {service.subtitle}
+            </p>
+          </div>
+        </div>
+
+        <h2 className="text-4xl lg:text-5xl font-black text-[#0a192f] mb-8 tracking-tighter leading-[1.1]">
+          {service.title.split(' ').map((word, i) => (
+            <span key={i}>
+              {word === "전문" || word === "Solution" ? <span className="text-brand-green">{word}</span> : word}
+              {i !== service.title.split(' ').length - 1 && ' '}
+            </span>
+          ))}
+        </h2>
+
+        <p className="text-[#0a192f]/70 text-lg leading-relaxed mb-10 font-medium">
           {service.description}
         </p>
 
-        <h3 className="text-text-1 font-semibold text-sm uppercase tracking-wider mb-4">
-          주요 서비스 항목
-        </h3>
-        <ul className="space-y-3">
-          {service.details.map((detail) => (
-            <li key={detail} className="flex items-start gap-3 text-text-2 text-sm">
-              <span
-                className="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center"
-                style={{
-                  background: colors.checkBg,
-                  border: `1px solid ${colors.checkBorder}`,
-                }}
-              >
-                <svg
-                  className={`w-3 h-3 ${colors.text}`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </span>
-              {detail}
-            </li>
-          ))}
-        </ul>
+        <div className="space-y-4">
+          <h3 className="text-[#0a192f] font-black text-sm uppercase tracking-widest mb-4 flex items-center gap-2">
+            <span className="w-4 h-[2px] bg-brand-green" />
+            Core Capabilities
+          </h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {service.details.map((detail) => (
+              <li key={detail} className="flex items-center gap-3 text-[#0a192f]/80 text-sm font-bold bg-[#0a192f]/5 px-4 py-3 rounded-xl border border-transparent hover:border-brand-green/20 hover:bg-white transition-all">
+                <span className="text-brand-green">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                {detail}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </article>
   );
