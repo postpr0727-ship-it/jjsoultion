@@ -4,30 +4,26 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import ServiceIcon from "@/components/ui/ServiceIcon";
 
 // 서비스별 포인트 컬러스키마 (그린/블루 기반 메쉬 그라데이션 컨셉)
-const serviceStyles: Record<string, { text: string; iconBg: string; border: string; imageUrl: string }> = {
+const serviceStyles: Record<string, { text: string; iconBg: string; border: string }> = {
   marketing: {
     text: "text-brand-green",
     iconBg: "bg-brand-green-light/50 group-hover:bg-brand-green/10",
     border: "group-hover:border-brand-green/30",
-    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
   },
   design: {
     text: "text-brand-blue",
     iconBg: "bg-brand-blue-light/50 group-hover:bg-brand-blue/10",
     border: "group-hover:border-brand-blue/30",
-    imageUrl: "/images/service-design.jpg"
   },
   web: {
     text: "text-brand-green",
     iconBg: "bg-brand-green-light/50 group-hover:bg-brand-green/10",
     border: "group-hover:border-brand-green/30",
-    imageUrl: "/images/service-web.jpg"
   },
   brand: {
     text: "text-brand-blue",
     iconBg: "bg-brand-blue-light/50 group-hover:bg-brand-blue/10",
     border: "group-hover:border-brand-blue/30",
-    imageUrl: "/images/service-brand.jpg"
   },
 };
 
@@ -57,7 +53,7 @@ export default function ServicesOverview() {
               {/* 섬네일 이미지 */}
               <div className="relative h-48 overflow-hidden">
                 <img
-                  src={serviceStyles[service.id].imageUrl}
+                  src={service.imageUrl}
                   alt={service.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />

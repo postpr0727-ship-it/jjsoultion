@@ -5,6 +5,7 @@ export interface Service {
   description: string;
   details: string[];
   iconName: "marketing" | "design" | "web" | "brand";
+  imageUrl: string;
 }
 
 export const SERVICES: Service[] = [
@@ -22,6 +23,7 @@ export const SERVICES: Service[] = [
       "키워드 리서치 및 타겟 전략 수립",
     ],
     iconName: "marketing",
+    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "design",
@@ -37,6 +39,7 @@ export const SERVICES: Service[] = [
       "배너·현수막·옥외광고물 디자인",
     ],
     iconName: "design",
+    imageUrl: "/images/service-design.jpg",
   },
   {
     id: "web",
@@ -51,6 +54,7 @@ export const SERVICES: Service[] = [
       "유지보수 및 호스팅 관리",
     ],
     iconName: "web",
+    imageUrl: "/images/service-web.jpg",
   },
   {
     id: "brand",
@@ -66,5 +70,6 @@ export const SERVICES: Service[] = [
       "브랜드 리뉴얼 및 리브랜딩",
     ],
     iconName: "brand",
+    imageUrl: "/images/service-brand.jpg",
   },
 ];

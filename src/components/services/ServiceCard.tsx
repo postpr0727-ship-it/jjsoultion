@@ -9,16 +9,10 @@ interface Props {
   reversed?: boolean;
 }
 
-// 서비스별 로컬 이미지 매핑
-const serviceImages: Record<string, string> = {
-  marketing: "/images/service-web.jpg", // 이미 존재하는 이미지 활용
-  design: "/images/service-design.jpg",
-  web: "/images/service-web.jpg",
-  brand: "/images/service-brand.jpg",
-};
+
 
 export default function ServiceCard({ service, reversed = false }: Props) {
-  const imageUrl = serviceImages[service.id] || "/images/hero.jpg";
+  const imageUrl = service.imageUrl;
 
   return (
     <article
