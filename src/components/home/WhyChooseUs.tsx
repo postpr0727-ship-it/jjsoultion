@@ -4,9 +4,9 @@ import { COMPANY } from "@/constants/company";
 
 const STRENGTHS = [
   {
-    stat: "4년+",
-    label: "업계 베테랑",
-    desc: "100개 이상의 프로젝트 성공 노하우",
+    stat: "15년+",
+    label: "실전 경험",
+    desc: "2010년부터 마케팅·디자인·개발 전 분야를 두루 경험한 깊은 현장 노하우",
     color: "text-brand-green",
     bg: "bg-brand-green-light/30",
     border: "group-hover:border-brand-green/30",
