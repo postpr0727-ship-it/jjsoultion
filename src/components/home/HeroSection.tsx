@@ -45,7 +45,7 @@ export default function HeroSection() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-green"></span>
           </span>
-          2010년부터 함께하는 디지털 파트너
+          2010년부터 쌓아온 실무 전문가의 노하우
         </div>
 
         {/* 메인 헤딩: 그라데이션 및 타이포그래피 강화 */}

@@ -4,7 +4,7 @@ const STRENGTHS = [
   {
     stat: "15년+",
     label: "실전 경험",
-    desc: "2010년부터 마케팅·디자인·개발 전 분야를 두루 경험한 깊은 현장 노하우",
+    desc: "실무 전문가의 2010년부터 이어져 온 마케팅·디자인·개발 노하우",
     color: "text-brand-green",
     bg: "bg-brand-green-light/30",
     border: "group-hover:border-brand-green/30",
