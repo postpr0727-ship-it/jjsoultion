@@ -1,4 +1,5 @@
 export const COMPANY = {
+  siteUrl: "https://jjsoultion.vercel.app",
   name: "준앤준솔루션",
   nameEn: "JJSolution",
   tagline: "신뢰할 수 있는 비즈니스 파트너",

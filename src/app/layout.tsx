@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
+import { COMPANY } from "@/constants/company";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
@@ -14,6 +15,7 @@ const notoSansKR = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(COMPANY.siteUrl),
   title: {
     default: "준앤준솔루션 | 온라인마케팅·디자인·웹개발·브랜드",
     template: "%s | 준앤준솔루션",
