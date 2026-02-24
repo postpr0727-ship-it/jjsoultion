@@ -1,6 +1,4 @@
-import Link from "next/link";
 import SectionTitle from "@/components/ui/SectionTitle";
-import { COMPANY } from "@/constants/company";
 
 const STRENGTHS = [
   {
@@ -64,14 +62,6 @@ export default function WhyChooseUs() {
               ))}
             </div>
 
-            <div className="mt-12">
-              <Link
-                href="/services"
-                className="btn-primary"
-              >
-                우리의 가치 더 알아보기
-              </Link>
-            </div>
           </div>
 
           {/* 오른쪽 — 강점 카드 레이아웃 */}
