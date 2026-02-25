@@ -31,7 +31,7 @@ export default function MobileMenu({ isOpen, onClose }: Props) {
         onClick={onClose}
       />
       {/* 메뉴 패널 */}
-      <div className="absolute top-0 right-0 h-full w-72 bg-white border-l border-border flex flex-col shadow-xl">
+      <div className="absolute top-0 right-0 h-full w-72 bg-white border-l border-border flex flex-col shadow-xl z-10">
         {/* 닫기 버튼 */}
         <div className="flex justify-end p-6">
           <button
