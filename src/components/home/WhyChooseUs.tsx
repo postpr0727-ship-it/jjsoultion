@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
       <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-green/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           {/* 왼쪽 — 텍스트 콘텐츠 */}
           <div className="max-w-xl">
             <SectionTitle
@@ -57,7 +57,7 @@ export default function WhyChooseUs() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-text-1 font-medium text-lg">{point}</span>
+                  <span className="text-text-1 font-medium text-base">{point}</span>
                 </div>
               ))}
             </div>
@@ -80,7 +80,7 @@ export default function WhyChooseUs() {
                 className={`card-premium group relative ${item.bg} border-transparent ${item.border}
                            ${idx === 0 ? "sm:row-span-2 flex flex-col justify-center" : ""}`}
               >
-                <div className={`font-black text-5xl mb-3 tracking-tighter ${item.color} group-hover:scale-110 transition-transform origin-left duration-500`}>
+                <div className={`font-black text-4xl mb-3 tracking-tighter ${item.color} group-hover:scale-110 transition-transform origin-left duration-500`}>
                   {item.stat}
                 </div>
                 <div className="text-text-1 font-bold text-xl mb-3">

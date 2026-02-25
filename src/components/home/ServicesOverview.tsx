@@ -44,7 +44,7 @@ export default function ServicesOverview() {
         />
 
         {/* 4카드 그리드 */}
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-10 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {SERVICES.map((service) => (
             <div
               key={service.id}
@@ -60,7 +60,7 @@ export default function ServicesOverview() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
 
-              <div className="p-8">
+              <div className="p-5 md:p-8">
                 {/* 아이콘: 더 세련된 컨테이너 */}
                 <div
                   className={`-mt-16 relative z-10 mb-8 w-16 h-16 rounded-2xl flex items-center justify-center

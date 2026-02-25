@@ -48,18 +48,17 @@ export default function HeroSection() {
           2010년부터 쌓아온 실무 전문가의 노하우
         </div>
 
-        {/* 메인 헤딩: 그라데이션 및 타이포그래피 강화 */}
-        <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-text-1 leading-[1.1] mb-8 tracking-tighter">
+        {/* 메인 헤딩 */}
+        <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-text-1 leading-[1.15] mb-6 md:mb-8 tracking-tighter">
           비즈니스 성장을
           <br />
           <span className="text-gradient-green">한 곳에서</span> 완성하세요
         </h1>
 
-        {/* 서브 헤딩: 가독성 보강 */}
-        <p className="text-text-2 text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto mb-14 font-medium opacity-90">
+        {/* 서브 헤딩 */}
+        <p className="text-text-2 text-base md:text-xl leading-relaxed max-w-2xl mx-auto mb-10 md:mb-14 font-medium opacity-90">
           {COMPANY.subTagline}
-          <br />
-          <span className="text-text-muted mt-2 block font-normal text-base md:text-lg">
+          <span className="text-text-muted mt-2 hidden sm:block font-normal text-sm md:text-base">
             마케팅 · 디자인 · 개발 · 브랜드 — 준앤준솔루션이 당신의 성공 궤도를 함께 그립니다
           </span>
         </p>
