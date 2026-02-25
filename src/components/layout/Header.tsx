@@ -98,8 +98,7 @@ export default function Header() {
         </button>
       </div>
 
-    </div>
-    </header >
+    </header>
     <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
   );
 }
