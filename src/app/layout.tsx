@@ -36,6 +36,11 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     siteName: "준앤준솔루션",
   },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   verification: {
     other: {
       "naver-site-verification": "9dbdd999aa1c7e72bc973fe49be603fa7fece525",
