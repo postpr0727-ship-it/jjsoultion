@@ -49,15 +49,17 @@ export default function PixelogBanner() {
                             />
                         </div>
 
-                        <Link
-                            href="/portfolio"
+                        <a
+                            href="https://pixel-log-ten.vercel.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="bg-[#0a192f] text-white px-10 py-5 rounded-2xl font-black text-lg shadow-2xl hover:bg-[#1a2b4a] hover:-translate-y-1 active:scale-95 transition-all flex items-center gap-3 group/btn"
                         >
                             포트폴리오 바로가기
                             <svg className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                             </svg>
-                        </Link>
+                        </a>
                     </div>
                 </div>
 

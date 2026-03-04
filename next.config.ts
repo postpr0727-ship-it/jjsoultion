@@ -8,6 +8,15 @@ const nextConfig: NextConfig = {
       { protocol: "http", hostname: "**" },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/portfolio",
+        destination: "https://pixel-log-ten.vercel.app/",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

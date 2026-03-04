@@ -10,5 +10,5 @@ export interface NavItem {
 export const NAV_ITEMS: NavItem[] = [
   { label: "홈", href: "/" },
   { label: "서비스 소개", href: "/services" },
-  { label: "작업 사례", href: "/portfolio" },
+  { label: "작업 사례", href: "https://pixel-log-ten.vercel.app/", external: true },
 ];
