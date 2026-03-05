@@ -34,9 +34,8 @@ export default function MobileMenu({ isOpen, onClose }: Props) {
 
       {/* 메뉴 패널 */}
       <div
-        className={`absolute top-0 right-0 h-full w-72 flex flex-col shadow-2xl transition-transform duration-300 ease-in-out z-10 border-l border-border
+        className={`absolute top-0 right-0 h-full w-72 bg-white flex flex-col shadow-2xl transition-transform duration-300 ease-in-out z-10 border-l border-border
                    ${isOpen ? "translate-x-0" : "translate-x-full"}`}
-        style={{ backgroundColor: "#ffffff" }}
       >
         {/* 닫기 버튼 */}
         <div className="flex justify-end p-6">
@@ -66,7 +65,18 @@ export default function MobileMenu({ isOpen, onClose }: Props) {
           <ul className="space-y-4">
             {NAV_ITEMS.map((item) => (
               <li key={item.href}>
-                {item.external ? (
+                {item.highlight ? (
+                  <a
+                    href={item.href}
+                    {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    onClick={onClose}
+                    className="block py-4 px-6 bg-brand-green text-white rounded-xl
+                               text-xl font-bold text-center shadow-md
+                               hover:bg-brand-green-dark transition-colors duration-200"
+                  >
+                    {item.label}
+                  </a>
+                ) : item.external ? (
                   <a
                     href={item.href}
                     target="_blank"
@@ -74,7 +84,7 @@ export default function MobileMenu({ isOpen, onClose }: Props) {
                     onClick={onClose}
                     className="block py-4 px-6 text-text-2 hover:text-brand-green
                                hover:bg-[#EBF5EC] rounded-xl transition-all duration-200
-                               text-xl font-bold shadow-sm"
+                               text-xl font-bold"
                   >
                     {item.label}
                   </a>
@@ -84,7 +94,7 @@ export default function MobileMenu({ isOpen, onClose }: Props) {
                     onClick={onClose}
                     className="block py-4 px-6 text-text-2 hover:text-brand-green
                                hover:bg-[#EBF5EC] rounded-xl transition-all duration-200
-                               text-xl font-bold shadow-sm"
+                               text-xl font-bold"
                   >
                     {item.label}
                   </Link>

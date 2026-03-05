@@ -51,7 +51,17 @@ export default function Header() {
           {/* 데스크탑 네비게이션 */}
           <nav className="hidden md:flex items-center gap-8">
             {NAV_ITEMS.map((item) =>
-              item.external ? (
+              item.highlight ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className="bg-brand-green text-white text-sm font-bold px-5 py-2 rounded-full
+                           hover:bg-brand-green-dark transition-colors duration-200 shadow-sm"
+                >
+                  {item.label}
+                </a>
+              ) : item.external ? (
                 <a
                   key={item.href}
                   href={item.href}
