@@ -21,23 +21,17 @@ export default function ContactCTA() {
               준앤준솔루션의 온라인 디자인 레이블인{" "}
               <strong className="text-white">&apos;{COMPANY.blogName}&apos;</strong> 네이버 톡톡으로{" "}
               <br className="hidden md:block" />
-              편하게 상담하시거나 이메일로 문의해 주시면 빠르게 답변드리겠습니다.
+              편하게 상담해 주시면 빠르게 답변드리겠습니다.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center">
+            <div className="flex justify-center">
               <a
                 href={COMPANY.blogUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-brand-green px-8 py-4 rounded-xl font-black text-base shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 text-center"
+                className="bg-white text-brand-green px-10 py-4 rounded-xl font-black text-base shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
               >
                 톡톡 상담하기
-              </a>
-              <a
-                href={`mailto:${COMPANY.email}`}
-                className="border-2 border-white/30 bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-white/20 transition-all duration-300 text-center break-all sm:break-normal"
-              >
-                이메일 문의: {COMPANY.email}
               </a>
             </div>
 
